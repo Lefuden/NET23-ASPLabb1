@@ -83,6 +83,3 @@ public class SearchController : Controller
 		return View(filteredApplications);
 	}
 }
-
-//Administratören vill kunna hämta alla ansökningar som skapats en viss månad
-//och kunna se hur många dagar varje person har sökt ledighet och vilka datum ansökan har skapats.
