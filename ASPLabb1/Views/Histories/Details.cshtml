@@ -1,0 +1,51 @@
+﻿@model ASPLabb1.Models.History
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>History details</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Personal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Personal.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeOffApplication.TypeName)
+        </dt>
+        <dd class = "col-sm-10">
+	        @Html.DisplayFor(model => model.TimeOffApplication.TypeName)
+        </dd>
+        <dt class = "col-sm-2">
+	        @Html.DisplayNameFor(model => model.TimeOffApplication.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+	        @Html.DisplayFor(model => model.TimeOffApplication.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+	        @Html.DisplayNameFor(model => model.TimeOffApplication.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+	        @Html.DisplayFor(model => model.TimeOffApplication.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+	        @Html.DisplayNameFor(model => model.TimeOffApplication.ApplicationDate)
+        </dt>
+        <dd class = "col-sm-10">
+	        @Html.DisplayFor(model => model.TimeOffApplication.ApplicationDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

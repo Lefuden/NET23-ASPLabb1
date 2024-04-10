@@ -1,0 +1,48 @@
+﻿@model ASPLabb1.Models.TimeOffApplication
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TimeOffApplication</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PersonalId" class="control-label"></label>
+                <select asp-for="PersonalId" class="form-control" asp-items="ViewBag.PersonalId"></select>
+                <span asp-validation-for="PersonalId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeName" class="control-label"></label>
+                <select asp-for="TypeName" class="form-control" asp-items="Html.GetEnumSelectList<TimeOffType>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

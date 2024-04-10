@@ -1,0 +1,49 @@
+﻿@model ASPLabb1.Models.FilterSearchModel
+
+@{
+	ViewData["Title"] = "Filtered Results";
+}
+@if(Model.TimeOffApplications.Count > 0){
+	<table class="table">
+		<thead>
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Total days
+			</th>
+			<th>
+				Application Date
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+	
+		@foreach (var item in Model.TimeOffApplications)
+		{
+			var totalDays = item.EndDate - item.StartDate;
+
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Personal.Name)
+			</td>
+			<td>
+				@totalDays.Days
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ApplicationDate)
+			</td>
+		</tr>
+		}
+		
+		</tbody>
+	</table>
+}
+else
+{
+	<h4>No applications found for selected month</h4>
+}
+<p>
+	<a asp-action="FilterSearch">New search</a>
+</p>

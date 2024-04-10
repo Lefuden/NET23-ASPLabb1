@@ -1,0 +1,57 @@
+﻿@model ASPLabb1.Models.SearchPersonalViewModel
+@{
+	ViewData["Title"] = "Results";
+}
+<dl class="row">
+	<dt class = "col-sm-2">
+		@Html.DisplayNameFor(model => model.ActiveApplication)
+	</dt>
+	<dd class = "col-sm-10">
+		@Html.DisplayFor(model => model.ActiveApplication)
+	</dd>
+	<dt class = "col-sm-2">
+		@Html.DisplayNameFor(model => model.TimeOffApplication.TypeName)
+	</dt>
+	<dd class = "col-sm-10">
+		@Html.DisplayFor(model => model.TimeOffApplication.TypeName)
+	</dd>
+	<dt class = "col-sm-2">
+		@Html.DisplayNameFor(model => model.Personal.Name)
+	</dt>
+	<dd class = "col-sm-10">
+		@Html.DisplayFor(model => model.Personal.Name)
+	</dd>
+</dl>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.TimeOffApplication.ApplicationDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TimeOffApplication.StartDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TimeOffApplication.EndDate)
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>
+			@Html.DisplayFor(model => model.TimeOffApplication.ApplicationDate)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.TimeOffApplication.StartDate)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.TimeOffApplication.EndDate)
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<p>
+	<a asp-action="Search">New search</a>
+</p>

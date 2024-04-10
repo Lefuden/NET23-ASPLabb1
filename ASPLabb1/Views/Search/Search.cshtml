@@ -1,0 +1,16 @@
+﻿@{
+	ViewData["Title"] = "Search";
+}
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Search">
+			<div class="form-group">
+				<label class="control-label">Select person</label>
+				<select class="form-control" name="id" asp-items="ViewBag.PersonalId"></select>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Search" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
